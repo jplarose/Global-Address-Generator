@@ -1,6 +1,6 @@
 [{
-	"country": "CA",
-	"code": "Canada",
+	"country": "Canada",
+	"code": "CA",
 	"regions": [{
 		"name": "Alberta",
 		"code": "AB"
