@@ -11,11 +11,10 @@ var addressValidation = function () {
     var validateFlag = [address1Valid, address2Valid, countryValid, cityValid, stateProvinceValid, postalValid];
 
     for (i; i < values.length; i += 1) {
-        if (values[i] != "") {
+        if (values[i].value != "") {
             //sendToObject(keyValues[i], values[i]);
             validateFlag[i] = true;
         } else {
-            console.log(keyValues[i] + "is false.");
             validateFlag[i] = false;
         }
     }

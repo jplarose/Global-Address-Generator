@@ -2,7 +2,7 @@
 var countryFunction = function () {
     "use strict";
     //Below is the format to access the region names inside of the countries
-    console.log(data[0].regions[0].name);
+    //console.log(data[0].regions[0].name);
     
     var i = 0, elem = document.getElementById("countrySelect"); 
     for (i; i < data.length; i += 1) {
@@ -21,7 +21,7 @@ var regionFunction = function () {
     for (i; i < data.length; i += 1) {
         if (country === data[i].country) {
             var countryIndex = i;
-            console.log(countryIndex);
+            //console.log(countryIndex);
             break;
         }
     }
@@ -43,7 +43,7 @@ var regionFunction = function () {
             $(elem2).append("<option>" + data[countryIndex].regions[r].name + "</option>");
         }
     }
-    console.log(country);
-    console.log(data[1].regions);
+    //console.log(country);
+    //console.log(data[1].regions);
 };
 
