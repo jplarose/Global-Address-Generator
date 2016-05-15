@@ -1,18 +1,10 @@
 /*global $ */
-
-
-
-
 var countryFunction = function () {
     "use strict";
-    
     //Below is the format to access the region names inside of the countries
     console.log(data[0].regions[0].name);
     
-    
-    var i = 0, elem = document.getElementById("countrySelect");
-    
-     
+    var i = 0, elem = document.getElementById("countrySelect"); 
     for (i; i < data.length; i += 1) {
         $(elem).append("<option>" + data[i].country + "</option>");
     }
@@ -33,7 +25,6 @@ var regionFunction = function () {
             break;
         }
     }
-    
     if (country === "Mypos") {
         //Can get this field to disable, but if information was entered before that it doesn't remove it. I can get around this, but it isn't ideal
         $(elem3).trigger('reset');
@@ -52,10 +43,6 @@ var regionFunction = function () {
             $(elem2).append("<option>" + data[countryIndex].regions[r].name + "</option>");
         }
     }
-    
-    //Need to search through the data object to get the index number, then I can list out the regions below it
-    //Need to research how to gray out a form if there are no options for it i.e. Mypos
-    
     console.log(country);
     console.log(data[1].regions);
 };
