@@ -17,9 +17,9 @@
         <input type="text" name="address2" maxlength=40 placeholder="Address 2">
     </div>
   </div>
-    <div class="field">
+    <div class="field" onchange="regionFunction()">
       <label>Country</label>
-      <select class="dropdown" id="countrySelect" onchange="regionFunction()">
+      <select class="dropdown" id="countrySelect" >
           <option value=""></option>
       </select>
     </div>
@@ -32,13 +32,13 @@
     <div class="field">
       <label>State/Province</label>
       <select class="dropdown" id="stateProvinceSelect">
-        <option value="">State/Province</option>
+        <option value=""></option>
       </select>
     </div>
      <div class="field">
         <label>Postal Code</label>
         <div class="fields">
-    <input type="text" name="Postal Code" placeholder="Postal Code">
+    <input type="text" id="Postal Code" placeholder="Postal Code">
         </div>
     </div>      
   <div class="button" tabindex="0">Submit</div>

@@ -23,10 +23,40 @@ var countryFunction = function () {
 var regionFunction = function () {
     "use strict";
     //Below is how to pull the value for the country after clicking it
-    var country = document.getElementById("countrySelect").value;
+    var country = document.getElementById("countrySelect").value, i = 0, r = 0, elem2 = document.getElementById("stateProvinceSelect"), elem3 = document.getElementById("Postal Code");
+    //elem2.options = null;
+    
+    for (i; i < data.length; i += 1) {
+        if (country === data[i].country) {
+            var countryIndex = i;
+            console.log(countryIndex);
+            break;
+        }
+    }
+    
+    if (country === "Mypos") {
+        //Can get this field to disable, but if information was entered before that it doesn't remove it. I can get around this, but it isn't ideal
+        $(elem3).trigger('reset');
+        $(elem3).prop('disabled', true);
+    } else {
+        $(elem3).prop('disabled', false);
+    }
+    
+    if (data[countryIndex].regions.length === 0) {
+        $(elem2).empty();
+        $(elem2).prop('disabled', true);
+    } else {
+        $(elem2).prop('disabled', false);
+        $(elem2).empty().append("<option></option>");
+        for (r; r < data[countryIndex].regions.length; r += 1) {
+            $(elem2).append("<option>" + data[countryIndex].regions[r].name + "</option>");
+        }
+    }
+    
     //Need to search through the data object to get the index number, then I can list out the regions below it
     //Need to research how to gray out a form if there are no options for it i.e. Mypos
     
     console.log(country);
+    console.log(data[1].regions);
 };
 
