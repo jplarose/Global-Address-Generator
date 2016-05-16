@@ -21,12 +21,52 @@ var addressValidation = function () {
     var postalCodeVal = function () {
         switch ($("#countrySelect")[0]) {
         case "Canada":
+            var lengthVal, spaceVal, alphaVal, digitVal, finalVal;
                 //if statement to determine if it is formatted properly (A1A 1A1)
-            break;
+            if ($("#PostalCode").length == 7) {
+                lengthVal = true;
+            } else {
+                lengthVal = false;
+            }
+            var postalIndex = $("#PostalCode").split(""), q = 0;
+            console.log(postalIndex[2]);
+                
+            if (postalIndex[3] == " ") {
+                spaceVal = true;
+            } else {
+                spaceVal = false;
+            } 
+            for (q; q < postalIndex.length; q += 1) {
+                if (q == 0 || q == 2 || q == 5) {
+                    if (Character.isLetter(postalIndex[q])) {
+                        alphaVal = true;
+                    } else {
+                        alphaVal = false;
+                    }
+                }
+            }
+            for (q = 0; q < postalIndex.length; q += 1) {
+                if (q == 1 || q == 4 || q == 6) {
+                    if (Character.isDigit(postalIndex[q])) {
+                        digitVal = true;
+                    } else {
+                        digitVal = false;
+                    }
+                }
+            }
+                
+            if (lengthVal == true && spaceVal == true && alphaVal == true && digitVal == true) {
+                return true;
+            } else {
+                return false;
+            }
+                //Possibly Regex to solve: var regex = /([ABCEGHJKLMNPRSTVWXYZ]\d){3}/i; 
+                //or var tmp = new RegExp(/[A-Z][0-9][A-Z][" "][0-9][A-Z][0-9]/i) 
         case "Mypos":
             return false;
         case "United States":
                 //if statement to determine if it is formatted properly (11111)
+                //if (length == 5) && all digits
             break;
         default:
                 //if statement to determine if it is formatted properly (alpha-numeric only)
