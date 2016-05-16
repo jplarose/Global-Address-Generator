@@ -4,7 +4,7 @@ var countryFunction = function () {
     //Below is the format to access the region names inside of the countries
     //console.log(data[0].regions[0].name);
     
-    var i = 0, elem = document.getElementById("countrySelect"); 
+    var i = 0, elem = document.getElementById("countrySelect");
     for (i; i < data.length; i += 1) {
         $(elem).append("<option>" + data[i].country + "</option>");
     }
@@ -15,8 +15,7 @@ var countryFunction = function () {
 var regionFunction = function () {
     "use strict";
     //Below is how to pull the value for the country after clicking it
-    var country = document.getElementById("countrySelect").value, i = 0, r = 0, elem2 = document.getElementById("stateProvinceSelect"), elem3 = document.getElementById("Postal Code");
-    //elem2.options = null;
+    var country = $("#countrySelect")[0].value, i = 0, r = 0, elem2 = $("#stateProvinceSelect")[0], elem3 = $("#PostalCode")[0];
     
     for (i; i < data.length; i += 1) {
         if (country === data[i].country) {
@@ -27,7 +26,7 @@ var regionFunction = function () {
     }
     if (country === "Mypos") {
         //Can get this field to disable, but if information was entered before that it doesn't remove it. I can get around this, but it isn't ideal
-        $(elem3).trigger('reset');
+        //$(elem3).trigger('reset');
         $(elem3).prop('disabled', true);
     } else {
         $(elem3).prop('disabled', false);
