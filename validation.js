@@ -42,7 +42,7 @@ var addressValidation = function () {
             }
         default:
             $("#postalError")[0].innerHTML = "";
-            if (/A-Z0-9/gi.test($("#PostalCode")[0].value)) {
+            if (/^[A-Z0-9]+$/i.test($("#PostalCode")[0].value)) {
                 return true;
             } else {
                 $("#postalError")[0].innerHTML += "This is a required field and must contain letters and numbers only";
