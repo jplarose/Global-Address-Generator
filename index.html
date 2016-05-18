@@ -11,7 +11,7 @@
       <div class="field">
         <input type="text" id="address1" maxlength=40 placeholder="Address 1">
       </div> 
-      <div id="address1Error"></div>
+      <div id="address1Error" style="color:red"></div>
   </div>
   <div class="field">
     <label>Address 2</label>
@@ -25,20 +25,20 @@
           <option value=""></option>
       </select>
     </div>
-    <div id="countryError"></div>
+    <div id="countryError" style="color:red"></div>
      <div class="field">
         <label>City</label>
         <div class="fields">
     <input type="text" id="City" maxlength=30 placeholder="City">
         </div>
-         <div id="cityError"></div>
+         <div id="cityError" style="color:red"></div>
     </div>
     <div class="field">
       <label>State/Province</label>
       <select class="dropdown" id="stateProvinceSelect">
         <option value=""></option>
       </select>
-        <div id="regionError"></div>
+        <div id="regionError" style="color:red"></div>
     </div>
      <div class="field">
         <label>Postal Code</label>
@@ -49,7 +49,7 @@
     </div>      
   <div class="button" tabindex="0" id= "submit" onclick="addressValidation()">Submit</div>
     
-<textarea name="outputArea" id="outputArea" readonly="yes"></textarea>
+<textarea name="outputArea" id="outputArea" readonly="yes" cols="100"></textarea>
 </form>
     </body>
 </html>
