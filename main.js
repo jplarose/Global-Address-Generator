@@ -2,7 +2,7 @@
 var countryFunction = function () {
     "use strict";
     
-    var i = 0, elem = document.getElementById("countrySelect");
+    var i = 0, elem = $("#countrySelect")[0];
     for (i; i < data.length; i += 1) {
         $(elem).append("<option>" + data[i].country + "</option>");
     }

@@ -131,6 +131,9 @@ var addressValidation = function () {
         var outputObject = new Object();
         var values = [address1, address2, country, city, region, postal], i;
         var keyValues = ["address1", "address2", "country", "city", "region", "postal"];
+        if (country == "MP") {
+            values[5] = "";
+        }
         
         for (i = 0; i < values.length; i += 1) {
             if (values[i] != "") {
@@ -147,5 +150,7 @@ var addressValidation = function () {
     var finalFlagCheck = flagCheck($("#address1")[0].value, $("#countrySelect")[0].value, $("#City")[0].value, $("#stateProvinceSelect")[0].value, postalValid);
     if (finalFlagCheck == true) {
         sendToObject($("#address1")[0].value, $("#address2")[0].value, newCountryCode, $("#City")[0].value, newRegionCode, $("#PostalCode")[0].value);
+    } else {
+        $("#outputArea")[0].innerHTML = "";
     }
 };
