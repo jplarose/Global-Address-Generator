@@ -104,8 +104,10 @@ var addressValidation = function () {
             if (address1 != "" && country != "" && city != "" && postalFlag == true) {
                 if (data[countryIndex].regions.length < 0 && region == "") {
                     return true;
-                } else if (data[countryIndex].regions.length >= 0 && region != "") {
+                } else if (data[countryIndex].regions.length > 0 && region != "") {
                     return true;
+                } else {
+                    $("#regionError")[0].innerHTML = "This is a required field";
                 }
             } else {
                 if (address1 == "") {

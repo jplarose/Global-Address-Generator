@@ -24,7 +24,9 @@ var regionFunction = function () {
     } else {
         $(elem3).prop('disabled', false);
     }
-    if (data[countryIndex].regions.length === 0) {
+    if (countryIndex < 0 || countryIndex == null) {
+        $(elem2).empty();
+    } else if (data[countryIndex].regions.length === 0) {
         $(elem2).empty();
         $(elem2).prop('disabled', true);
     } else {
